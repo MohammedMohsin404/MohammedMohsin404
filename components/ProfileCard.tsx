@@ -44,7 +44,7 @@ export default function ProfileCard({ profileData }: Props) {
           <MyLink
             name="my linkedin"
             Icon={AiFillLinkedin}
-            url="https://www.linkedin.com/in/arafat-islam-sunny"
+            url="https://www.linkedin.com/in/mohammedmohsin404/"
           />
         </div>
       </div>
