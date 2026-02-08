@@ -8,11 +8,16 @@ export default async function handler(
   const response = await fetch(
     "https://dev.to/api/articles?username=arafat4693&per_page=9000000000000000000"
   )
+  if (!response.ok) {
+    return res.status(502).json({ error: "Failed to fetch reactions." })
+  }
   const articles = await response.json()
 
   let reactions = 0
-  articles.forEach((row: any) => {
-    reactions += parseInt(row.public_reactions_count)
+  ;(articles as Array<{ public_reactions_count?: number }>).forEach((row) => {
+    if (row.public_reactions_count) {
+      reactions += row.public_reactions_count
+    }
   })
 
   res.status(200).json(reactions)

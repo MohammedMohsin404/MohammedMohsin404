@@ -1,7 +1,8 @@
 import MyIcon from "../MyIcon"
+import type { IconType } from "react-icons"
 
 interface Props {
-  Icon: any
+  Icon: IconType
   desc: string
   border?: boolean
 }

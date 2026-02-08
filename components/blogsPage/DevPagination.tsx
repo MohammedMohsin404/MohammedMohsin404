@@ -8,7 +8,7 @@ interface Props {
   currentPage: number
   postsPerPage: number
   setCurrentPage: Dispatch<SetStateAction<number>>
-  onLoadMore: any
+  onLoadMore: (url: string) => Promise<void>
 }
 
 export default function DevPagination({
