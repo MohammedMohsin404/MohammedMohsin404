@@ -27,8 +27,10 @@ import Stats from './components/statistics/Stats';
 import Works from './components/worksPage/Works';
 import {
   ClientData,
+  ExperienceData,
   MenuData,
   ServiceData,
+  SkillData,
   SocialMedia,
   StatisticsData,
   TestimonialData,
@@ -192,6 +194,81 @@ export const quoteData: TestimonialData = {
   userProfession: 'Software Developer',
   userImage: { url: '/images/martin.jpg' },
 };
+
+export const resumeData: ExperienceData[] = [
+  {
+    id: 'exp-1',
+    badge: '2022 - Present',
+    desc:
+      'Building responsive web applications, collaborating with product teams, and delivering user-focused UI experiences.',
+    experience: true,
+    subTitle: 'Frontend Developer',
+    title: 'Web Studio',
+    logo: { url: '/images/lin.png' },
+  },
+  {
+    id: 'exp-2',
+    badge: '2020 - 2022',
+    desc:
+      'Implemented APIs and optimized performance for scalable web platforms across multiple client projects.',
+    experience: true,
+    subTitle: 'Full Stack Developer',
+    title: 'Tech Solutions',
+    logo: { url: '/images/upwork.png' },
+  },
+  {
+    id: 'edu-1',
+    badge: '2016 - 2020',
+    desc:
+      'Focused on software engineering fundamentals, data structures, and web technologies.',
+    experience: false,
+    subTitle: 'B.Sc. in Computer Science',
+    title: 'National University',
+    logo: { url: '/images/freelancer.png' },
+  },
+  {
+    id: 'edu-2',
+    badge: '2014 - 2016',
+    desc:
+      'Completed foundational studies in mathematics and computer fundamentals.',
+    experience: false,
+    subTitle: 'Higher Secondary Certificate',
+    title: 'City College',
+    logo: { url: '/images/envato.png' },
+  },
+];
+
+export const skillsData: SkillData[] = [
+  {
+    id: 'skills-1',
+    knowledge: [
+      'Design Systems',
+      'RESTful APIs',
+      'GraphQL',
+      'CI/CD Pipelines',
+      'Accessibility',
+      'Agile Delivery',
+    ],
+    backEnd: [
+      { id: 'be-1', field: 'Node.js', value: '85' },
+      { id: 'be-2', field: 'Java', value: '75' },
+      { id: 'be-3', field: '.NET', value: '70' },
+      { id: 'be-4', field: 'PostgreSQL', value: '80' },
+    ],
+    frontEnd: [
+      { id: 'fe-1', field: 'React', value: '90' },
+      { id: 'fe-2', field: 'Next.js', value: '88' },
+      { id: 'fe-3', field: 'TypeScript', value: '85' },
+      { id: 'fe-4', field: 'Tailwind CSS', value: '82' },
+    ],
+    languages: [
+      { id: 'lang-1', field: 'English', value: '90' },
+      { id: 'lang-2', field: 'Urdu', value: '100' },
+      { id: 'lang-3', field: 'Hindi', value: '80' },
+      { id: 'lang-4', field: 'Arabic', value: '60' },
+    ],
+  },
+];
 
 export const statisticsData: StatisticsData[] = [
   {
