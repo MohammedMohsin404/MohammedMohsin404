@@ -6,6 +6,7 @@ import resumeOperations from "../../graphqlOperations/resume"
 import { ExperienceData } from "../../types"
 import { useQuery } from "@apollo/client"
 import { useMemo } from "react"
+import { resumeData } from "../../data"
 
 interface ExperienceQuery {
   resumes: ExperienceData[]
@@ -16,13 +17,15 @@ export default function MyResume() {
     resumeOperations.Queries.getExperience
   )
 
+  const resumes = data?.resumes?.length ? data.resumes : resumeData
+
   const filteredData = useMemo<
     [ExperienceData[], ExperienceData[]] | undefined
   >(() => {
-    if (data === undefined) return undefined
+    if (resumes.length === 0) return undefined
     const experience: ExperienceData[] = []
     const education: ExperienceData[] = []
-    data.resumes.forEach((r) => {
+    resumes.forEach((r) => {
       if (r.experience) {
         experience.push(r)
       } else {
@@ -30,7 +33,7 @@ export default function MyResume() {
       }
     })
     return [experience, education]
-  }, [data])
+  }, [resumes])
 
   if (error) console.log(error)
 
