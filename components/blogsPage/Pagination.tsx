@@ -1,4 +1,4 @@
-import { useQuery } from "@apollo/client"
+import { useQuery, type QueryResult } from "@apollo/client"
 import { Dispatch, SetStateAction, MouseEvent } from "react"
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
 import Skeleton from "react-loading-skeleton"
@@ -13,7 +13,7 @@ interface Props {
   setCurrentPage: Dispatch<SetStateAction<number>>
   setSkip: Dispatch<SetStateAction<number>>
   setFilteredBlogs: Dispatch<SetStateAction<BlogsQuery | undefined>>
-  onLoadMore: any
+  onLoadMore: QueryResult<BlogsQuery, { skip: number; first: number }>["fetchMore"]
 }
 
 interface RecordsQuery {
