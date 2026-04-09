@@ -1,4 +1,5 @@
 import {
+  ApolloLink,
   ApolloClient,
   createHttpLink,
   InMemoryCache,
@@ -7,9 +8,48 @@ import {
 import { setContext } from "@apollo/client/link/context"
 import { relayStylePagination } from "@apollo/client/utilities"
 
-const httpLink = createHttpLink({
-  uri: process.env.NEXT_PUBLIC_HYGRAPH_URL,
-})
+function resolveGraphqlUri(): string | undefined {
+  const configuredUri = process.env.NEXT_PUBLIC_HYGRAPH_URL
+
+  if (!configuredUri) {
+    return undefined
+  }
+
+  if (configuredUri.startsWith("http://") || configuredUri.startsWith("https://")) {
+    return configuredUri
+  }
+
+  if (configuredUri.startsWith("/")) {
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+    if (!siteUrl) {
+      return undefined
+    }
+
+    try {
+      return new URL(configuredUri, siteUrl).toString()
+    } catch {
+      return undefined
+    }
+  }
+
+  try {
+    return new URL(configuredUri).toString()
+  } catch {
+    return undefined
+  }
+}
+
+const graphqlUri = resolveGraphqlUri()
+
+const httpLink = graphqlUri
+  ? createHttpLink({
+      uri: graphqlUri,
+    })
+  : new ApolloLink(() => {
+      throw new Error(
+        "GraphQL endpoint is not configured. Set NEXT_PUBLIC_HYGRAPH_URL (and NEXT_PUBLIC_SITE_URL when using a relative path)."
+      )
+    })
 
 const authLink = setContext((_, { headers }) => {
   const token = process.env.NEXT_PUBLIC_HYGRAPH_AUTH_TOKEN
