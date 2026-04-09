@@ -7,8 +7,35 @@ import {
 import { setContext } from "@apollo/client/link/context"
 import { relayStylePagination } from "@apollo/client/utilities"
 
+function resolveGraphqlUri(): string | undefined {
+  const configuredUri = process.env.NEXT_PUBLIC_HYGRAPH_URL
+
+  if (!configuredUri) {
+    return undefined
+  }
+
+  if (configuredUri.startsWith("http://") || configuredUri.startsWith("https://")) {
+    return configuredUri
+  }
+
+  if (configuredUri.startsWith("/")) {
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+    if (!siteUrl) {
+      return undefined
+    }
+
+    try {
+      return new URL(configuredUri, siteUrl).toString()
+    } catch {
+      return undefined
+    }
+  }
+
+  return configuredUri
+}
+
 const httpLink = createHttpLink({
-  uri: process.env.NEXT_PUBLIC_HYGRAPH_URL,
+  uri: resolveGraphqlUri(),
 })
 
 const authLink = setContext((_, { headers }) => {

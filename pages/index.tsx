@@ -21,6 +21,16 @@ interface Props {
   profileData: ProfileData
 }
 
+const fallbackProfileData: ProfileData = {
+  id: "fallback-profile",
+  cv: "#",
+  name: "Mohammed Mohsin",
+  ownersPhoto: {
+    url: "/images/martin.jpg",
+  },
+  bgImages: [{ url: "/images/pic4.png" }],
+}
+
 const clipPaths = [
   "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
   "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
@@ -118,15 +128,26 @@ const Home: NextPage<Props> = ({ profileData }) => {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: profileOperations.Queries.getProfile,
-  })
+  try {
+    const { data } = await client.query({
+      query: profileOperations.Queries.getProfile,
+    })
 
-  return {
-    props: {
-      profileData: data.profiles[0],
-    },
-    revalidate: 3600,
+    return {
+      props: {
+        profileData: data.profiles[0] || fallbackProfileData,
+      },
+      revalidate: 3600,
+    }
+  } catch (error) {
+    console.error("Failed to fetch profile data during build:", error)
+
+    return {
+      props: {
+        profileData: fallbackProfileData,
+      },
+      revalidate: 300,
+    }
   }
 }
 
