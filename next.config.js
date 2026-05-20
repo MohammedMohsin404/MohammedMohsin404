@@ -8,7 +8,9 @@ const nextConfig = {
       'res.cloudinary.com',
       'media.dev.to',
       'media2.dev.to',
-      'ap-south-1.graphassets.com'
+      'ap-south-1.graphassets.com',
+      'avatars.githubusercontent.com',
+      'opengraph.githubassets.com'
     ],
   },
 };

@@ -1,4 +1,5 @@
 import MyInfo from "../MyInfo"
+import { personalInfo } from "../../data"
 
 export default function Location() {
   return (
@@ -11,10 +12,10 @@ export default function Location() {
         className="w-full h-96"
       ></iframe>
       <ul className="grid grid-cols-1 mt-10 location sm:grid-cols-2 gap-y-2">
-        <MyInfo field="address" value="Narayanganj, Bangladesh" />
-        <MyInfo field="email" value="mohammedmohsin0725@gmail.com" />
-        <MyInfo field="phone" value="+880 178 885 3750" />
-        <MyInfo field="freelance" value="Available" />
+        <MyInfo field="address" value={personalInfo.address} />
+        <MyInfo field="email" value={personalInfo.email} />
+        <MyInfo field="phone" value={personalInfo.phone} />
+        <MyInfo field="availability" value={personalInfo.availability} />
       </ul>
     </div>
   )

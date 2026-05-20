@@ -11,6 +11,8 @@ import Loader from "../Loader"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { BsGithub } from "react-icons/bs"
+import { fallbackSingleWorks } from "../../data"
+import { hasGraphqlConfig } from "../../apollo-client"
 
 interface Props {
   workId: string
@@ -26,10 +28,15 @@ interface SingleWorkVariables {
 }
 
 export default function WorkLb({ workId, reactiveVar }: Props) {
+  const fallbackWork = fallbackSingleWorks.find((work) => work.id === workId)
   const { data: workData } = useQuery<SingleWorkQuery, SingleWorkVariables>(
     workOperations.Queries.getSingleWork,
-    { variables: { projectId: workId } }
+    {
+      variables: { projectId: workId },
+      skip: Boolean(fallbackWork) || !hasGraphqlConfig,
+    }
   )
+  const work = fallbackWork || workData?.work
 
   function closeLb(e: MouseEvent): void {
     if ((e.target as Element).classList.contains("lb")) {
@@ -47,7 +54,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
       className={`lb fixed top-0 left-0 w-screen h-screen bg-gray-900/70 z-50 flex justify-center transition-all duration-200`}
     >
       <main className="h-full w-[70rem] max-w-[90%] bg-gray-800 flex justify-center items-center">
-        {workData === undefined ? (
+        {work === undefined ? (
           <Loader />
         ) : (
           <div className="w-full h-full max-h-full overflow-y-scroll myScroll">
@@ -57,7 +64,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                 className="absolute z-10 text-5xl cursor-pointer top-6 right-8 text-main-orange"
               />
               <Image
-                src={workData.work.images[0].url}
+                src={work.images[0].url}
                 alt="project description"
                 layout="fill"
                 objectFit="cover"
@@ -65,22 +72,24 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
             </div>
             <section className="py-14 px-14">
               <div className="flex flex-wrap items-center justify-between gap-6 mb-4 text-4xl font-semibold tracking-wide text-gray-300 capitalize">
-                {workData.work.title}
+                {work.title}
 
                 <div className="flex items-center gap-x-4">
-                  <a
-                    rel="noreferrer"
-                    href={workData.work.workUrl}
-                    target="_blank"
-                    className="text-[1.4rem] flex items-center gap-2 rounded-full py-1.5 px-6 tracking-wide font-semibold capitalize hover:bg-sky-600 transition-all duration-300 text-white bg-sky-500"
-                  >
-                    view
-                    <HiOutlineViewGridAdd className="text-3xl" />
-                  </a>
+                  {work.workUrl && (
+                    <a
+                      rel="noreferrer"
+                      href={work.workUrl}
+                      target="_blank"
+                      className="text-[1.4rem] flex items-center gap-2 rounded-full py-1.5 px-6 tracking-wide font-semibold capitalize hover:bg-sky-600 transition-all duration-300 text-white bg-sky-500"
+                    >
+                      view
+                      <HiOutlineViewGridAdd className="text-3xl" />
+                    </a>
+                  )}
 
                   <a
                     rel="noreferrer"
-                    href={workData.work.githubUrl}
+                    href={work.githubUrl}
                     target="_blank"
                     className="text-[1.4rem] flex items-center gap-2 rounded-full py-1.5 px-6 tracking-wide font-semibold capitalize shadow-lg hover:bg-gray-700 transition-all duration-300 text-white bg-gray-900"
                   >
@@ -94,30 +103,30 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
               </p>
 
               <ul className="grid grid-cols-1 mt-10 sm:grid-cols-2 gap-y-2">
-                <MyInfo field="created by" value={workData.work.ownerName} />
+                <MyInfo field="created by" value={work.ownerName} />
                 <MyInfo
                   field="date"
-                  value={new Date(workData.work.date).toLocaleDateString()}
+                  value={new Date(work.date).toLocaleDateString()}
                 />
-                <MyInfo field="client" value={workData.work.clientName} />
+                <MyInfo field="client" value={work.clientName} />
                 <MyInfo field="categories" value="Project" />
               </ul>
 
               <article className="my-10 prose max-w-none">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {workData.work.description}
+                  {work.description}
                 </ReactMarkdown>
               </article>
 
-              {workData.work.techStack.length &&
-                workData.work.userActions.length && (
+              {work.techStack.length > 0 &&
+                work.userActions.length > 0 && (
                   <div className="grid grid-cols-1 sm:grid-cols-3 mb-10 gap-2 text-gray-300 text-[1.4rem] tech-func">
                     <div className="mb-6 sm:mb-0">
                       <h1 className="mb-4 text-2xl font-semibold text-gray-200 capitalize">
                         tech-stack
                       </h1>
                       <ul className="flex flex-col gap-y-2">
-                        {workData.work.techStack.map((t, idx) => (
+                        {work.techStack.map((t, idx) => (
                           <li key={idx} className="flex gap-2">
                             {t}
                           </li>
@@ -130,7 +139,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                         user-actions
                       </h1>
                       <ul className="flex flex-col gap-y-2">
-                        {workData.work.userActions.map((u, idx) => (
+                        {work.userActions.map((u, idx) => (
                           <li key={idx} className="flex gap-2">
                             {u}
                           </li>
@@ -140,11 +149,11 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                   </div>
                 )}
 
-              {workData.work.images.slice(1).map((img, idx) => (
+              {work.images.slice(1).map((img, idx) => (
                 <div
                   key={idx}
                   className={`w-full relative h-[52rem] ${
-                    idx !== workData.work.images.length - 2 && "mb-8"
+                    idx !== work.images.length - 2 && "mb-8"
                   }`}
                 >
                   <Image

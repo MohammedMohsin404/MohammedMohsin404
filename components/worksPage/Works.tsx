@@ -1,15 +1,15 @@
-import { useQuery } from "@apollo/client"
-import { useMemo, useState } from "react"
+import { useQuery, useReactiveVar } from "@apollo/client"
+import { useMemo } from "react"
 import Title from "../Title"
 import Work from "./Work"
 import workOperations from "../../graphqlOperations/work"
 import { WorksConnectionData } from "../../types"
 import WorksSkeleton from "./WorksSkeleton"
-import { currentWorkTab } from "../../apollo-client"
-import { useReactiveVar } from "@apollo/client"
+import { currentWorkTab, hasGraphqlConfig } from "../../apollo-client"
 import InfiniteScroll from "react-infinite-scroll-component"
 import Loader from "../Loader"
 import { motion, AnimatePresence } from "framer-motion"
+import { fallbackWorksConnection } from "../../data"
 
 interface WorksQuery {
   worksConnection: WorksConnectionData
@@ -22,28 +22,31 @@ interface WorksVariables {
 
 export default function Works() {
   const currentTab = useReactiveVar(currentWorkTab)
-  const [isOpen, setIsOpen] = useState<string | null>(null)
   const {
     data: worksData,
     error: worksError,
     fetchMore,
   } = useQuery<WorksQuery, WorksVariables>(workOperations.Queries.getWorks, {
     variables: { first: 6 },
+    skip: !hasGraphqlConfig,
   })
 
   const filteredWorks = useMemo(() => {
-    if (worksData === undefined) return
-    return worksData.worksConnection.edges.filter((w) =>
+    const worksConnection = worksData?.worksConnection || fallbackWorksConnection
+    return worksConnection.edges.filter((w) =>
       w.node.workTabs.some((t) => t.tab === currentTab)
     )
   }, [worksData, currentTab])
 
   if (worksError) {
     console.log(worksError.toString())
+  }
+
+  if (hasGraphqlConfig && worksData === undefined && !worksError) {
     return <WorksSkeleton />
   }
 
-  if (worksData === undefined) return <WorksSkeleton />
+  const worksConnection = worksData?.worksConnection || fallbackWorksConnection
 
   return (
     <div
@@ -53,13 +56,14 @@ export default function Works() {
       <Title name="works" currentMenu={currentTab} />
 
       <InfiniteScroll
-        dataLength={worksData.worksConnection.edges.length}
+        dataLength={worksConnection.edges.length}
         next={() => {
+          if (!worksData) return
           return fetchMore({
             variables: { after: worksData.worksConnection.pageInfo.endCursor },
           })
         }}
-        hasMore={worksData.worksConnection.pageInfo.hasNextPage}
+        hasMore={worksConnection.pageInfo.hasNextPage}
         loader={
           <div className="flex justify-center mb-8">
             <Loader />

@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client"
 import workOperations from "../graphqlOperations/work"
-import { currentWorkTab } from "../apollo-client"
+import { currentWorkTab, hasGraphqlConfig } from "../apollo-client"
+import { fallbackWorkTabs } from "../data"
 
 interface Props {
   name: string
@@ -12,7 +13,10 @@ interface TabsQuery {
 }
 
 export default function Title({ name, currentMenu }: Props) {
-  const { data: menus } = useQuery<TabsQuery>(workOperations.Queries.getTabs)
+  const { data: menus } = useQuery<TabsQuery>(workOperations.Queries.getTabs, {
+    skip: !hasGraphqlConfig,
+  })
+  const workTabs = menus?.workTabs?.length ? menus.workTabs : fallbackWorkTabs
 
   return (
     <div className="customLine relative before:bottom-0 borderLeft z-20 py-10 flex flex-wrap gap-8 justify-center sm:justify-between items-center">
@@ -20,9 +24,9 @@ export default function Title({ name, currentMenu }: Props) {
         {name}
       </span>
 
-      {currentMenu && menus && (
+      {currentMenu && (
         <ul className="flex flex-wrap items-center gap-6 mr-12 ml-12">
-          {menus.workTabs.map((menu, idx) => (
+          {workTabs.map((menu, idx) => (
             <li
               key={idx}
               onClick={() => currentWorkTab(menu.tab)}

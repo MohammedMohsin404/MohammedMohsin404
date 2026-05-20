@@ -8,6 +8,7 @@ import Knowledge from "./Knowledge"
 import Languages from "./Languages"
 import resumeOperations from "../../graphqlOperations/resume"
 import { skillsData } from "../../data"
+import { hasGraphqlConfig } from "../../apollo-client"
 
 interface SkillQuery {
   skills: SkillData[]
@@ -15,7 +16,8 @@ interface SkillQuery {
 
 export default function Skills() {
   const { data, error } = useQuery<SkillQuery>(
-    resumeOperations.Queries.getSkills
+    resumeOperations.Queries.getSkills,
+    { skip: !hasGraphqlConfig }
   )
 
   if (error) console.log(error)
@@ -41,7 +43,7 @@ export default function Skills() {
           <FrontEnd frontend={skills?.frontEnd} />
         </li>
         <li className="relative px-12 pt-6 vCustomLine before:left-0 sm:before:block before:hidden">
-          <IconTitle title="languages" Icon={FaReact} />
+          <IconTitle title="professional" Icon={FaReact} />
           <Languages languages={skills?.languages} />
         </li>
       </ul>

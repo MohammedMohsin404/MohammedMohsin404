@@ -42,7 +42,7 @@ export default function ResumeItem({ resume, border }: Props) {
       <p className="text-gray-500 text-xl capitalize tracking-wider">
         {resume.subTitle}
       </p>
-      <p className="text-gray-500 text-2xl capitalize tracking-wide mt-5 leading-relaxed">
+      <p className="text-gray-500 text-2xl tracking-wide mt-5 leading-relaxed">
         {resume.desc}
       </p>
     </div>

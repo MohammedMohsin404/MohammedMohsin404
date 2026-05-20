@@ -1,17 +1,10 @@
-import { ReactiveVar, useQuery, useReactiveVar } from "@apollo/client"
+import { ReactiveVar, useReactiveVar } from "@apollo/client"
 import Image from "next/image"
-import {
-  Dispatch,
-  SetStateAction,
-  MouseEvent,
-  useState,
-  useEffect,
-} from "react"
+import { MouseEvent } from "react"
 import { IoMdClose } from "react-icons/io"
-import { menus, socialMedia } from "../data"
+import { menus, personalInfo, socialMedia } from "../data"
 import SideMenuBtn from "./SideMenuBtn"
-import profileOperations from "../graphqlOperations/profile"
-import { partOfProfile, ProfileData } from "../types"
+import { ProfileData } from "../types"
 import { currentMenu } from "../apollo-client"
 
 interface Props {
@@ -89,7 +82,7 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
 
           <a
             rel="noreferrer"
-            href={profile.cv}
+            href={profile.cv || personalInfo.cvUrl}
             target="_blank"
             className="text-gray-300 uppercase text-xl border-2 border-solid border-gray-300 w-56 h-14 rounded-full font-semibold flex items-center justify-center mx-auto mt-12 hover:text-main-orange hover:border-main-orange transition-all duration-200"
           >
@@ -97,7 +90,8 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
           </a>
 
           <p className="text-center text-gray-500 text-xl mt-16 mb-10">
-            {"Mohammed Mohsin's"} portfolio © {new Date().getUTCFullYear()}.
+            {personalInfo.fullName}&apos;s portfolio ©{" "}
+            {new Date().getUTCFullYear()}.
           </p>
         </div>
       </main>

@@ -1,6 +1,6 @@
 import { IconType } from "react-icons"
 
-interface ProfileData {
+export interface ProfileData {
   id: string
   cv: string
   name: string
@@ -8,19 +8,19 @@ interface ProfileData {
   bgImages: { url: string }[]
 }
 
-interface partOfProfile {
+export interface partOfProfile {
   name: string
   ownersPhoto: { url: string }
 }
 
-interface ServiceData {
+export interface ServiceData {
   id: number
   title: string
   Icon: IconType
   description: string
 }
 
-interface PriceData {
+export interface PriceData {
   id: string
   packageName: string
   packagePrice: number
@@ -29,19 +29,19 @@ interface PriceData {
   packageServices: PackageServiceData[]
 }
 
-interface PackageServiceData {
+export interface PackageServiceData {
   id: string
   isIncluded: boolean
   packageService: string
 }
 
-interface ClientData {
+export interface ClientData {
   id: number
   linkLocation: string
   imgLocation: string
 }
 
-interface TestimonialData {
+export interface TestimonialData {
   id: string
   userName: string
   userProfession: string
@@ -49,7 +49,7 @@ interface TestimonialData {
   userImage: { url: string }
 }
 
-interface ExperienceData {
+export interface ExperienceData {
   id: string
   badge: string
   desc: string
@@ -59,7 +59,7 @@ interface ExperienceData {
   logo: { url: string }
 }
 
-interface SkillData {
+export interface SkillData {
   id: string
   knowledge: string[]
   backEnd: FieldValueData[]
@@ -67,30 +67,30 @@ interface SkillData {
   languages: FieldValueData[]
 }
 
-interface FieldValueData {
+export interface FieldValueData {
   id?: string
   field: string
-  value: string
+  value?: string
 }
 
-interface WorksData {
+export interface WorksData {
   id: string
   title: string
   images: { url: string }[]
   workTabs: { tab: String }[]
 }
 
-interface PageInfoData {
+export interface PageInfoData {
   hasNextPage: boolean
   endCursor: string
 }
 
-interface WorksConnectionData {
+export interface WorksConnectionData {
   edges: { node: WorksData }[]
   pageInfo: PageInfoData
 }
 
-interface SingleWorkData {
+export interface SingleWorkData {
   id: string
   description: string
   title: string
@@ -104,7 +104,7 @@ interface SingleWorkData {
   date: Date
 }
 
-interface BlogData {
+export interface BlogData {
   id: string
   blogUrl: string
   description: string
@@ -113,18 +113,18 @@ interface BlogData {
   date: Date
 }
 
-interface BlogsQuery {
+export interface BlogsQuery {
   blogs: BlogData[]
 }
 
-interface MenuData {
+export interface MenuData {
   id: number
   label: string
   Icon: IconType
   Component: () => JSX.Element
 }
 
-interface guestBooksConnection {
+export interface guestBooksConnection {
   edges: {
     node: {
       id: string
@@ -136,19 +136,42 @@ interface guestBooksConnection {
   pageInfo: PageInfoData
 }
 
-interface StatisticsData {
+export interface StatisticsData {
   title: string
   info: string | number
   externalLink?: string
 }
 
-interface SocialMedia {
+export interface SocialMedia {
   id: number
   label: string
   mediaUrl: string
   logoColor: string
   info: string
   Icon: IconType
+}
+
+export interface CertificationData {
+  id: string
+  title: string
+  issuer: string
+}
+
+export interface PersonalInfo {
+  fullName: string
+  headline: string
+  roles: string[]
+  email: string
+  phone: string
+  address: string
+  residence: string
+  availability: string
+  githubUrl: string
+  linkedInUrl: string
+  portfolioUrl: string
+  cvUrl: string
+  avatarUrl: string
+  summary: string
 }
 
 export interface blog {

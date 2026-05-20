@@ -34,8 +34,11 @@ function resolveGraphqlUri(): string | undefined {
   return configuredUri
 }
 
+export const graphqlUri = resolveGraphqlUri()
+export const hasGraphqlConfig = Boolean(graphqlUri)
+
 const httpLink = createHttpLink({
-  uri: resolveGraphqlUri(),
+  uri: graphqlUri,
 })
 
 const authLink = setContext((_, { headers }) => {

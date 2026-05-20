@@ -7,6 +7,7 @@ import { ExperienceData } from "../../types"
 import { useQuery } from "@apollo/client"
 import { useMemo } from "react"
 import { resumeData } from "../../data"
+import { hasGraphqlConfig } from "../../apollo-client"
 
 interface ExperienceQuery {
   resumes: ExperienceData[]
@@ -14,7 +15,8 @@ interface ExperienceQuery {
 
 export default function MyResume() {
   const { data, error } = useQuery<ExperienceQuery>(
-    resumeOperations.Queries.getExperience
+    resumeOperations.Queries.getExperience,
+    { skip: !hasGraphqlConfig }
   )
 
   const resumes = data?.resumes?.length ? data.resumes : resumeData
