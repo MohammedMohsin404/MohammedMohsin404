@@ -33,7 +33,7 @@ const fallbackProfileData: ProfileData = {
   ownersPhoto: {
     url: personalInfo.avatarUrl,
   },
-  bgImages: [{ url: "/images/Frame 44.png" }],
+  bgImages: [{ url: "/images/g-9.jpg" }],
 }
 
 const clipPaths = [
@@ -48,7 +48,7 @@ const Home: NextPage<Props> = ({ profileData }) => {
   const [loaderPage, setLoaderPage] = useState<boolean>(true)
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => setLoaderPage(false), 3500)
+    const timeoutId = setTimeout(() => setLoaderPage(false), 500)
     return () => {
       clearTimeout(timeoutId)
     }
@@ -133,35 +133,10 @@ const Home: NextPage<Props> = ({ profileData }) => {
 }
 
 export async function getStaticProps() {
-  if (!hasGraphqlConfig) {
-    return {
-      props: {
-        profileData: fallbackProfileData,
-      },
-      revalidate: 300,
-    }
-  }
-
-  try {
-    const { data } = await client.query({
-      query: profileOperations.Queries.getProfile,
-    })
-
-    return {
-      props: {
-        profileData: data.profiles[0] || fallbackProfileData,
-      },
-      revalidate: 3600,
-    }
-  } catch (error) {
-    console.error("Failed to fetch profile data during build:", error)
-
-    return {
-      props: {
-        profileData: fallbackProfileData,
-      },
-      revalidate: 300,
-    }
+  return {
+    props: {
+      profileData: fallbackProfileData,
+    },
   }
 }
 
