@@ -1,9 +1,10 @@
 import { FaChevronRight } from "react-icons/fa"
+import type { IconType } from "react-icons"
 import { PriceData } from "../../types"
 import MyIcon from "../MyIcon"
 
 interface Props {
-  Icon: any
+  Icon: IconType
   price: PriceData
 }
 
