@@ -32,7 +32,10 @@ export default function AboutMe() {
       </article>
 
       <ul className="grid grid-cols-1 mt-6 location sm:grid-cols-2 gap-y-2">
-        <MyInfo field="role" value="Software & Technical Executive" />
+        <MyInfo
+          field="role"
+          value="Senior Web Developer & Digital Marketing Specialist"
+        />
         <MyInfo field="residence" value={personalInfo.residence} />
         <MyInfo field="availability" value={personalInfo.availability} />
         <MyInfo field="address" value={personalInfo.address} />

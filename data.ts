@@ -3,10 +3,10 @@ import { FaEye, FaRegListAlt, FaRegUser } from "react-icons/fa"
 import { FiSend } from "react-icons/fi"
 import { MdComputer } from "react-icons/md"
 import {
-  SiFigma,
-  SiFirebase,
-  SiNextdotjs,
-  SiNodedotjs,
+  SiCloudflare,
+  SiGoogleanalytics,
+  SiShopify,
+  SiWordpress,
 } from "react-icons/si"
 import About from "./components/aboutPage/About"
 import Contact from "./components/contactPage/Contact"
@@ -31,25 +31,25 @@ import {
 export const personalInfo: PersonalInfo = {
   fullName: "Mohammed Mafiz Mohsin",
   headline:
-    "Software & Technical Executive focused on web applications, APIs, databases, and technical operations.",
+    "Senior Web Developer | WordPress & Digital Marketing Specialist",
   roles: [
-    "Software & Technical Executive",
-    "Front-end Developer",
-    "React.js Developer",
-    "Technical Operations Support",
+    "Senior Web Developer",
+    "WordPress & WooCommerce Specialist",
+    "Technical SEO Specialist",
+    "Web Performance & Infrastructure",
   ],
-  email: "mohammedmohsin0725@gmail.com",
-  phone: "+8801540118127",
-  address: "Narayanganj, Dhaka, Bangladesh",
-  residence: "Bangladesh",
-  availability: "Open to remote work",
+  email: "mohammed.mafiz@gmail.com",
+  phone: "+66 95 161 5070",
+  address: "Bangkok, Thailand",
+  residence: "Thailand",
+  availability: "Full-time, remote & freelance",
   githubUrl: "https://github.com/MohammedMohsin404",
   linkedInUrl: "https://www.linkedin.com/in/mohammed-mohsin404/",
   portfolioUrl: "https://mohammed-mohsin.vercel.app",
-  cvUrl: "/files/Mohammed_Mafiz_Mohsin.pdf",
+  cvUrl: "/files/Mohammed_Mafiz_Mohsin_Bangkok_Hospital_Web_SEO_CV_2026.pdf",
   avatarUrl: "https://avatars.githubusercontent.com/u/212501288?v=4",
   summary:
-    "Results-driven and adaptable professional with experience in technology, digital systems, and technical operations. Skilled in problem-solving, application development, database management, API integration, and modern digital tools. Quick learner with strong communication, teamwork, and analytical skills. Seeking opportunities in IT, technical support, business operations, and technology-related roles.",
+    "Senior web developer and digital marketing specialist with 9+ years of experience building high-performance WordPress websites, managing web infrastructure, improving SEO visibility, and delivering secure, scalable digital platforms. I support Bangkok Hospital's international website and partner sites across web development, technical SEO, performance, security, and campaign delivery.",
 }
 
 export const menus: MenuData[] = [
@@ -107,31 +107,31 @@ export const socialMedia: SocialMedia[] = [
 export const services: ServiceData[] = [
   {
     id: 1,
-    title: "Web applications",
-    Icon: SiNextdotjs,
+    title: "WordPress development",
+    Icon: SiWordpress,
     description:
-      "Responsive web applications and internal systems using React.js, Next.js, and Tailwind CSS.",
+      "High-performance WordPress websites with Elementor, WPBakery, WooCommerce, responsive design, and conversion-focused landing pages.",
   },
   {
     id: 2,
-    title: "API & databases",
-    Icon: SiNodedotjs,
+    title: "Technical SEO",
+    Icon: SiGoogleanalytics,
     description:
-      "API integration, Node.js and Express.js work, MongoDB/MySQL data handling, and performance improvements.",
+      "Technical SEO, metadata, schema markup, sitemaps, redirects, Google Search Console, GA4, and keyword-led content improvements.",
   },
   {
     id: 3,
-    title: "Digital workflows",
-    Icon: SiFirebase,
+    title: "Performance & CDN",
+    Icon: SiCloudflare,
     description:
-      "Technical operations support, troubleshooting, system maintenance, and digital workflow management.",
+      "Core Web Vitals improvements through caching, Cloudflare CDN, image optimization, script tuning, and server configuration.",
   },
   {
     id: 4,
-    title: "UI delivery",
-    Icon: SiFigma,
+    title: "E-commerce & hosting",
+    Icon: SiShopify,
     description:
-      "Clean interfaces, responsive layouts, reusable components, and user-centered frontend delivery.",
+      "WooCommerce and Shopify stores plus cPanel/WHM, DNS, SSL, backups, firewall monitoring, and site maintenance.",
   },
 ]
 
@@ -161,39 +161,49 @@ export const clients: ClientData[] = [
 export const quoteData: TestimonialData = {
   id: "quote",
   quote:
-    "Clean software starts with clear thinking, useful structure, and a strong respect for the people using it.",
+    "The best websites unite clear information, dependable infrastructure, strong search visibility, and an effortless user experience.",
   userName: personalInfo.fullName,
-  userProfession: "Software & Technical Executive",
+  userProfession: "Senior Web Developer & Digital Marketing Specialist",
   userImage: { url: personalInfo.avatarUrl },
 }
 
 export const resumeData: ExperienceData[] = [
   {
-    id: "exp-sog",
-    badge: "March 2025 - Present",
+    id: "exp-bangkok-hospital",
+    badge: "July 2022 - Present",
     desc:
-      "Developed and maintained responsive web applications and internal systems; worked on frontend and backend functionality; managed APIs, databases, and application performance improvements; collaborated with team members using GitHub and Jira; supported technical operations, workflow management, troubleshooting, and system maintenance.",
+      "Develop and maintain Bangkok Hospital's public international website and partner sites. Lead WordPress, Elementor, WPBakery, WooCommerce, technical SEO, Core Web Vitals, Cloudflare/CDN, cPanel/WHM, DNS, SSL, security, backups, campaign landing pages, and performance reporting. Coordinate web support across Asia, the Middle East, Europe, North America, and Australia.",
     experience: true,
-    subTitle: "Software & Technical Executive",
-    title: "Shahida Obayed Group (SOG)",
+    subTitle: "Senior Web Developer & Digital Marketing Specialist",
+    title: "Bangkok Hospital",
     logo: { url: "/images/lin.png" },
   },
   {
-    id: "edu-bsc",
-    badge: "2025",
-    desc: "Graduated: 2025",
-    experience: false,
-    subTitle: "Bachelor of Science in CSE",
-    title: "Northern University Bangladesh",
+    id: "exp-freelance",
+    badge: "2017 - 2022",
+    desc:
+      "Delivered WordPress, WooCommerce, Shopify, LMS, SaaS, corporate, and e-commerce websites for healthcare, education, real estate, recruitment, and technology clients. Managed hosting, SEO, Google and Meta campaigns, web performance, security, and end-to-end website delivery for projects across Asia, the Middle East, Europe, North America, and Australia.",
+    experience: true,
+    subTitle: "Web Developer & Digital Marketing Specialist",
+    title: "Freelancer / Remote",
     logo: { url: "/images/freelancer.png" },
   },
   {
-    id: "edu-diploma",
-    badge: "2021",
-    desc: "Graduated: 2021",
+    id: "edu-bsc",
+    badge: "2016 - 2020",
+    desc: "Bachelor of Science in Computer Science.",
     experience: false,
-    subTitle: "Diploma in Engineering Computer Technology",
-    title: "Munshiganj Polytechnic Institute",
+    subTitle: "Bachelor of Science in Computer Science",
+    title: "Daffodil International University",
+    logo: { url: "/images/freelancer.png" },
+  },
+  {
+    id: "edu-hsc",
+    badge: "2011 - 2013",
+    desc: "Higher Secondary Certificate.",
+    experience: false,
+    subTitle: "Higher Secondary Education",
+    title: "Uttara High School & College",
     logo: { url: "/images/envato.png" },
   },
 ]
@@ -202,118 +212,137 @@ export const skillsData: SkillData[] = [
   {
     id: "skills-cv",
     knowledge: [
-      "REST API",
-      "API Integration",
-      "Database Management",
-      "SEO Basics",
-      "Vercel Deployment",
+      "WordPress & Elementor",
+      "Technical SEO",
+      "Core Web Vitals",
+      "Google Search Console & GA4",
+      "Cloudflare & CDN",
+      "cPanel/WHM, DNS & SSL",
       "Git & GitHub",
     ],
     backEnd: [
-      { id: "be-node", field: "Node.js" },
-      { id: "be-express", field: "Express.js" },
-      { id: "be-mongodb", field: "MongoDB" },
-      { id: "be-mysql", field: "MySQL" },
-      { id: "be-firebase", field: "Firebase" },
-      { id: "be-database", field: "Database Management" },
+      { id: "be-cpanel", field: "cPanel & WHM" },
+      { id: "be-dns", field: "DNS, Domains & Email" },
+      { id: "be-ssl", field: "SSL & Access Control" },
+      { id: "be-cloudflare", field: "Cloudflare & CDN" },
+      { id: "be-security", field: "Backups & Malware Monitoring" },
+      { id: "be-server", field: "Hosting & Server Configuration" },
     ],
     frontEnd: [
-      { id: "fe-javascript", field: "JavaScript" },
-      { id: "fe-typescript", field: "TypeScript" },
-      { id: "fe-react", field: "React.js" },
-      { id: "fe-next", field: "Next.js" },
-      { id: "fe-tailwind", field: "Tailwind CSS" },
-      { id: "fe-responsive", field: "Responsive Web Design" },
+      { id: "fe-wordpress", field: "WordPress" },
+      { id: "fe-elementor", field: "Elementor & WPBakery" },
+      { id: "fe-woo", field: "WooCommerce" },
+      { id: "fe-shopify", field: "Shopify" },
+      { id: "fe-bootstrap", field: "Bootstrap, CSS & JavaScript" },
+      { id: "fe-uiux", field: "Responsive Web Design & UI/UX" },
     ],
     languages: [
-      { id: "pro-problem", field: "Problem Solving" },
-      { id: "pro-communication", field: "Communication Skills" },
-      { id: "pro-team", field: "Team Collaboration" },
-      { id: "pro-time", field: "Time Management" },
-      { id: "pro-research", field: "Research & Analysis" },
-      { id: "pro-docs", field: "Documentation" },
-      { id: "pro-support", field: "Technical Support" },
-      { id: "pro-coordination", field: "Project Coordination" },
-      { id: "pro-learning", field: "Fast Learning Ability" },
-      { id: "pro-ethics", field: "Professional Work Ethics" },
+      { id: "pro-bangla", field: "Bangla (Native)" },
+      { id: "pro-english", field: "English (Professional)" },
+      { id: "pro-hindi", field: "Hindi/Urdu (Conversational)" },
+      { id: "pro-arabic", field: "Arabic (Basic)" },
+      { id: "pro-thai", field: "Thai (Basic)" },
+      { id: "pro-global", field: "Global Stakeholder Coordination" },
     ],
   },
 ]
 
 export const certificationsData: CertificationData[] = [
   {
-    id: "cert-jira",
-    title: "Jira Fundamentals",
-    issuer: "Atlassian",
+    id: "cert-next-react",
+    title: "Next JS and React JS",
+    issuer: "Training",
   },
   {
-    id: "cert-web",
-    title: "Complete Web Development Course",
-    issuer: "Programming Hero",
+    id: "cert-digital-marketing",
+    title: "Digital Marketing (SEO, Social Media, Google Ads)",
+    issuer: "Professional Training",
   },
   {
-    id: "cert-design",
-    title: "Graphic Design Course",
-    issuer: "NYDASA",
+    id: "cert-wordpress",
+    title: "WordPress Development and Freelancing",
+    issuer: "Professional Training",
   },
 ]
 
 export const fallbackWorkTabs = [
   { tab: "All" },
-  { tab: "Next.js" },
-  { tab: "React.js" },
-  { tab: "TypeScript" },
-  { tab: "Dashboard" },
-  { tab: "AI" },
+  { tab: "Healthcare" },
+  { tab: "WordPress" },
+  { tab: "SEO" },
+  { tab: "Performance" },
+  { tab: "E-commerce" },
 ]
 
 export const fallbackSingleWorks: SingleWorkData[] = [
   {
-    id: "work-freelancers-dashboard",
-    title: "Freelancers Dashboard",
+    id: "work-bangkok-hospital",
+    title: "Bangkok Hospital International Website",
     description:
-      "Responsive dashboard application for freelancers to manage projects and workflows efficiently.",
-    workUrl: "https://freelancers-dashboard.vercel.app",
-    githubUrl: "https://github.com/MohammedMohsin404/Freelancers-Dashboard",
-    clientName: "Personal Project",
+      "Ongoing web development, technical SEO, Core Web Vitals, Cloudflare/CDN, security, and campaign support for Bangkok Hospital's international website and partner sites.",
+    workUrl: "",
+    githubUrl: "",
+    clientName: "Bangkok Hospital",
     ownerName: personalInfo.fullName,
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    techStack: ["WordPress", "Elementor", "WPBakery", "Cloudflare", "Technical SEO"],
     userActions: [
-      "Responsive Dashboard",
-      "Clean User Interface",
-      "Dynamic Components",
-      "Fast Performance",
+      "International healthcare website support",
+      "Core Web Vitals and speed optimization",
+      "Schema, metadata, sitemaps, and redirects",
+      "Secure hosting, CDN, and performance monitoring",
     ],
     images: [
       {
-        url: "/images/projects/freelancers-dashboard.png",
+        url: "/images/pic4.png",
       },
     ],
-    date: new Date("2025-08-16"),
+    date: new Date("2022-07-01"),
   },
   {
-    id: "work-ai-resume-analyzer",
-    title: "AI Resume Analyzer",
+    id: "work-healthcare-websites",
+    title: "Healthcare & Clinic Websites",
     description:
-      "AI-based web application that analyzes resumes and provides smart improvement suggestions.",
+      "WordPress healthcare websites for Siam Smile Clinic and Hatyai International Dental Center, including multilingual service structures, technical SEO, patient landing pages, performance optimization, security, and maintenance.",
     workUrl: "",
     githubUrl: "https://github.com/MohammedMohsin404/AI-Resume-Analyzer",
-    clientName: "Personal Project",
+    clientName: "Healthcare clients",
     ownerName: personalInfo.fullName,
-    techStack: ["React.js", "TypeScript", "Tailwind CSS"],
+    techStack: ["WordPress", "Elementor", "Cloudflare", "SEO", "Multilingual Content"],
     userActions: [
-      "Resume Analysis System",
-      "AI-Based Suggestions",
-      "File Processing Features",
-      "Interactive User Interface",
-      "Responsive Design",
+      "Healthcare content and service-page structure",
+      "Technical SEO and Google indexing",
+      "Caching, CDN, and image optimization",
+      "Security, backups, and ongoing maintenance",
     ],
     images: [
       {
-        url: "/images/projects/ai-resume-analyzer.svg",
+        url: "/images/p-2.jpg",
       },
     ],
-    date: new Date("2025-12-10"),
+    date: new Date("2020-01-01"),
+  },
+  {
+    id: "work-global-digital-platforms",
+    title: "Global Digital Platforms",
+    description:
+      "Freelance WordPress, WooCommerce, Shopify, LMS, SaaS, corporate, and e-commerce projects delivered for clients in healthcare, education, real estate, recruitment, and technology.",
+    workUrl: "",
+    githubUrl: "",
+    clientName: "Freelance / Remote",
+    ownerName: personalInfo.fullName,
+    techStack: ["WordPress", "WooCommerce", "Shopify", "LMS", "SEO", "Web Performance"],
+    userActions: [
+      "E-commerce catalog, payment, shipping, and checkout delivery",
+      "Learning platforms with courses, registrations, and student areas",
+      "Hosting, domains, SSL, CDN, and security management",
+      "SEO strategy, content optimization, and reporting",
+    ],
+    images: [
+      {
+        url: "/images/avocado.jpg",
+      },
+    ],
+    date: new Date("2017-01-01"),
   },
 ]
 
@@ -321,27 +350,42 @@ export const fallbackWorksConnection: WorksConnectionData = {
   edges: [
     {
       node: {
-        id: "work-freelancers-dashboard",
-        title: "Freelancers Dashboard",
+        id: "work-bangkok-hospital",
+        title: "Bangkok Hospital International Website",
         images: fallbackSingleWorks[0].images,
         workTabs: [
           { tab: "All" },
-          { tab: "Next.js" },
-          { tab: "TypeScript" },
-          { tab: "Dashboard" },
+          { tab: "Healthcare" },
+          { tab: "WordPress" },
+          { tab: "SEO" },
+          { tab: "Performance" },
         ],
       },
     },
     {
       node: {
-        id: "work-ai-resume-analyzer",
-        title: "AI Resume Analyzer",
+        id: "work-healthcare-websites",
+        title: "Healthcare & Clinic Websites",
         images: fallbackSingleWorks[1].images,
         workTabs: [
           { tab: "All" },
-          { tab: "React.js" },
-          { tab: "TypeScript" },
-          { tab: "AI" },
+          { tab: "Healthcare" },
+          { tab: "WordPress" },
+          { tab: "SEO" },
+        ],
+      },
+    },
+    {
+      node: {
+        id: "work-global-digital-platforms",
+        title: "Global Digital Platforms",
+        images: fallbackSingleWorks[2].images,
+        workTabs: [
+          { tab: "All" },
+          { tab: "WordPress" },
+          { tab: "E-commerce" },
+          { tab: "SEO" },
+          { tab: "Performance" },
         ],
       },
     },
@@ -354,17 +398,16 @@ export const fallbackWorksConnection: WorksConnectionData = {
 
 export const statisticsData: StatisticsData[] = [
   {
-    title: "public repos",
-    info: 15,
-    externalLink: personalInfo.githubUrl,
+    title: "years experience",
+    info: "9+",
   },
   {
     title: "current role",
-    info: "Software & Technical Executive",
+    info: "Senior Web Developer",
   },
   {
     title: "portfolio",
-    info: "Vercel",
+    info: "Global remote",
     externalLink: personalInfo.portfolioUrl,
   },
 ]
