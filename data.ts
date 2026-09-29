@@ -31,12 +31,12 @@ import {
 export const personalInfo: PersonalInfo = {
   fullName: "Mohammed Mafiz Mohsin",
   headline:
-    "Senior Web Developer | WordPress & Digital Marketing Specialist",
+    "Senior Web Developer & SEO Specialist | WordPress, Performance & Digital Infrastructure",
   roles: [
     "Senior Web Developer",
-    "WordPress & WooCommerce Specialist",
-    "Technical SEO Specialist",
-    "Web Performance & Infrastructure",
+    "Technical SEO & Web Performance Specialist",
+    "WordPress & WooCommerce Expert",
+    "Digital Infrastructure & Cloudflare CDN",
   ],
   email: "mohammed.mafiz@gmail.com",
   phone: "+66 95 161 5070",
@@ -49,7 +49,7 @@ export const personalInfo: PersonalInfo = {
   cvUrl: "/files/Mohammed_Mafiz_Mohsin_Bangkok_Hospital_Web_SEO_CV_2026.pdf",
   avatarUrl: "https://avatars.githubusercontent.com/u/212501288?v=4",
   summary:
-    "Senior web developer and digital marketing specialist with 9+ years of experience building high-performance WordPress websites, managing web infrastructure, improving SEO visibility, and delivering secure, scalable digital platforms. I support Bangkok Hospital's international website and partner sites across web development, technical SEO, performance, security, and campaign delivery.",
+    "Senior web developer and SEO specialist with 9+ years of experience delivering high-performance WordPress websites, managing web infrastructure, and driving organic growth for healthcare and enterprise clients. Currently supporting Bangkok Hospital's international website and partner sites across web development, technical SEO, Core Web Vitals optimization, Cloudflare CDN management, security hardening, and campaign delivery. Experienced in coordinating with global stakeholders across Asia, Middle East, Europe, and North America.",
 }
 
 export const menus: MenuData[] = [
@@ -107,31 +107,31 @@ export const socialMedia: SocialMedia[] = [
 export const services: ServiceData[] = [
   {
     id: 1,
-    title: "WordPress development",
+    title: "WordPress Development",
     Icon: SiWordpress,
     description:
-      "High-performance WordPress websites with Elementor, WPBakery, WooCommerce, responsive design, and conversion-focused landing pages.",
+      "High-performance WordPress websites with Elementor, WPBakery, and WooCommerce. Responsive design, custom themes, conversion-focused landing pages, and healthcare/enterprise solutions.",
   },
   {
     id: 2,
     title: "Technical SEO",
     Icon: SiGoogleanalytics,
     description:
-      "Technical SEO, metadata, schema markup, sitemaps, redirects, Google Search Console, GA4, and keyword-led content improvements.",
+      "End-to-end technical SEO including metadata optimization, schema markup, XML sitemaps, redirects, Google Search Console, GA4 setup, and keyword-driven content strategy.",
   },
   {
     id: 3,
-    title: "Performance & CDN",
+    title: "Web Performance & CDN",
     Icon: SiCloudflare,
     description:
-      "Core Web Vitals improvements through caching, Cloudflare CDN, image optimization, script tuning, and server configuration.",
+      "Core Web Vitals optimization, Cloudflare CDN configuration, caching strategies, image optimization, script tuning, and server-side performance improvements.",
   },
   {
     id: 4,
-    title: "E-commerce & hosting",
+    title: "Web Infrastructure & Security",
     Icon: SiShopify,
     description:
-      "WooCommerce and Shopify stores plus cPanel/WHM, DNS, SSL, backups, firewall monitoring, and site maintenance.",
+      "Complete hosting management with cPanel/WHM, DNS configuration, SSL certificates, security hardening, malware monitoring, automated backups, and uptime optimization.",
   },
 ]
 
@@ -161,9 +161,9 @@ export const clients: ClientData[] = [
 export const quoteData: TestimonialData = {
   id: "quote",
   quote:
-    "The best websites unite clear information, dependable infrastructure, strong search visibility, and an effortless user experience.",
+    "Exceptional digital platforms combine robust infrastructure, lightning-fast performance, high search visibility, and seamless user experiences to drive measurable business growth.",
   userName: personalInfo.fullName,
-  userProfession: "Senior Web Developer & Digital Marketing Specialist",
+  userProfession: "Senior Web Developer & Technical SEO Specialist",
   userImage: { url: personalInfo.avatarUrl },
 }
 
@@ -172,9 +172,9 @@ export const resumeData: ExperienceData[] = [
     id: "exp-bangkok-hospital",
     badge: "July 2022 - Present",
     desc:
-      "Develop and maintain Bangkok Hospital's public international website and partner sites. Lead WordPress, Elementor, WPBakery, WooCommerce, technical SEO, Core Web Vitals, Cloudflare/CDN, cPanel/WHM, DNS, SSL, security, backups, campaign landing pages, and performance reporting. Coordinate web support across Asia, the Middle East, Europe, North America, and Australia.",
+      "Lead web development, technical SEO, and digital infrastructure for Bangkok Hospital's international website and partner sites. Manage WordPress/Elementor development, Core Web Vitals optimization, Cloudflare CDN configuration, cPanel/WHM hosting, DNS/SSL management, security hardening, and performance monitoring. Coordinate web support and campaign delivery for international stakeholders across Asia, Middle East, Europe, North America, and Australia.",
     experience: true,
-    subTitle: "Senior Web Developer & Digital Marketing Specialist",
+    subTitle: "Senior Web Developer & SEO Specialist",
     title: "Bangkok Hospital",
     logo: { url: "/images/lin.png" },
   },
@@ -182,27 +182,27 @@ export const resumeData: ExperienceData[] = [
     id: "exp-freelance",
     badge: "2017 - 2022",
     desc:
-      "Delivered WordPress, WooCommerce, Shopify, LMS, SaaS, corporate, and e-commerce websites for healthcare, education, real estate, recruitment, and technology clients. Managed hosting, SEO, Google and Meta campaigns, web performance, security, and end-to-end website delivery for projects across Asia, the Middle East, Europe, North America, and Australia.",
+      "Delivered 50+ WordPress, WooCommerce, Shopify, LMS, and corporate websites for healthcare, education, real estate, recruitment, and technology clients globally. Provided end-to-end solutions including hosting setup, technical SEO, Google/Meta advertising, performance optimization, and ongoing maintenance. Served clients across Asia, Middle East, Europe, and North America.",
     experience: true,
     subTitle: "Web Developer & Digital Marketing Specialist",
-    title: "Freelancer / Remote",
+    title: "Freelance / Remote Consultant",
     logo: { url: "/images/freelancer.png" },
   },
   {
     id: "edu-bsc",
     badge: "2016 - 2020",
-    desc: "Bachelor of Science in Computer Science.",
+    desc: "Bachelor of Science in Computer Science with focus on software development and web technologies.",
     experience: false,
-    subTitle: "Bachelor of Science in Computer Science",
+    subTitle: "BSc in Computer Science",
     title: "Daffodil International University",
     logo: { url: "/images/freelancer.png" },
   },
   {
     id: "edu-hsc",
     badge: "2011 - 2013",
-    desc: "Higher Secondary Certificate.",
+    desc: "Higher Secondary Certificate in Science.",
     experience: false,
-    subTitle: "Higher Secondary Education",
+    subTitle: "Higher Secondary Education (Science)",
     title: "Uttara High School & College",
     logo: { url: "/images/envato.png" },
   },
@@ -212,29 +212,31 @@ export const skillsData: SkillData[] = [
   {
     id: "skills-cv",
     knowledge: [
-      "WordPress & Elementor",
-      "Technical SEO",
-      "Core Web Vitals",
-      "Google Search Console & GA4",
-      "Cloudflare & CDN",
-      "cPanel/WHM, DNS & SSL",
-      "Git & GitHub",
+      "WordPress & Elementor Development",
+      "Technical SEO & Core Web Vitals",
+      "Google Search Console & GA4 Analytics",
+      "Cloudflare CDN & Performance Optimization",
+      "cPanel/WHM Hosting Management",
+      "DNS Configuration & SSL Management",
+      "Security & Malware Monitoring",
+      "Git & GitHub Workflow",
+      "WooCommerce & Shopify E-commerce",
     ],
     backEnd: [
       { id: "be-cpanel", field: "cPanel & WHM" },
       { id: "be-dns", field: "DNS, Domains & Email" },
-      { id: "be-ssl", field: "SSL & Access Control" },
-      { id: "be-cloudflare", field: "Cloudflare & CDN" },
+      { id: "be-ssl", field: "SSL Certificates & Security" },
+      { id: "be-cloudflare", field: "Cloudflare CDN" },
       { id: "be-security", field: "Backups & Malware Monitoring" },
-      { id: "be-server", field: "Hosting & Server Configuration" },
+      { id: "be-server", field: "Server Configuration" },
     ],
     frontEnd: [
       { id: "fe-wordpress", field: "WordPress" },
       { id: "fe-elementor", field: "Elementor & WPBakery" },
       { id: "fe-woo", field: "WooCommerce" },
       { id: "fe-shopify", field: "Shopify" },
-      { id: "fe-bootstrap", field: "Bootstrap, CSS & JavaScript" },
-      { id: "fe-uiux", field: "Responsive Web Design & UI/UX" },
+      { id: "fe-bootstrap", field: "CSS, JavaScript & Responsive" },
+      { id: "fe-uiux", field: "UI/UX & Conversion Design" },
     ],
     languages: [
       { id: "pro-bangla", field: "Bangla (Native)" },
@@ -242,7 +244,6 @@ export const skillsData: SkillData[] = [
       { id: "pro-hindi", field: "Hindi/Urdu (Conversational)" },
       { id: "pro-arabic", field: "Arabic (Basic)" },
       { id: "pro-thai", field: "Thai (Basic)" },
-      { id: "pro-global", field: "Global Stakeholder Coordination" },
     ],
   },
 ]
@@ -250,18 +251,18 @@ export const skillsData: SkillData[] = [
 export const certificationsData: CertificationData[] = [
   {
     id: "cert-next-react",
-    title: "Next JS and React JS",
-    issuer: "Training",
+    title: "Next.js & React.js - Advanced Web Development",
+    issuer: "Professional Training",
   },
   {
     id: "cert-digital-marketing",
-    title: "Digital Marketing (SEO, Social Media, Google Ads)",
-    issuer: "Professional Training",
+    title: "Digital Marketing Specialist - SEO, Google Ads, Social Media",
+    issuer: "Professional Certification",
   },
   {
     id: "cert-wordpress",
-    title: "WordPress Development and Freelancing",
-    issuer: "Professional Training",
+    title: "WordPress Development & Freelancing Business",
+    issuer: "Professional Certification",
   },
 ]
 
@@ -279,17 +280,19 @@ export const fallbackSingleWorks: SingleWorkData[] = [
     id: "work-bangkok-hospital",
     title: "Bangkok Hospital International Website",
     description:
-      "Ongoing web development, technical SEO, Core Web Vitals, Cloudflare/CDN, security, and campaign support for Bangkok Hospital's international website and partner sites.",
+      "Senior-level web development and SEO support for Bangkok Hospital's international website and partner sites. Delivering high-performance healthcare platforms with strict uptime, security, and compliance requirements.",
     workUrl: "",
     githubUrl: "",
-    clientName: "Bangkok Hospital",
+    clientName: "Bangkok Hospital (Thailand)",
     ownerName: personalInfo.fullName,
-    techStack: ["WordPress", "Elementor", "WPBakery", "Cloudflare", "Technical SEO"],
+    techStack: ["WordPress", "Elementor", "WPBakery", "Cloudflare", "Technical SEO", "Core Web Vitals"],
     userActions: [
-      "International healthcare website support",
-      "Core Web Vitals and speed optimization",
-      "Schema, metadata, sitemaps, and redirects",
-      "Secure hosting, CDN, and performance monitoring",
+      "Developed and maintained international healthcare website with 24/7 uptime",
+      "Optimized Core Web Vitals for improved user experience and SEO rankings",
+      "Implemented technical SEO: schema markup, XML sitemaps, 301 redirects",
+      "Managed Cloudflare CDN, caching strategies, and performance monitoring",
+      "Configured cPanel/WHM, DNS, SSL certificates, and security hardening",
+      "Created campaign landing pages for international patient outreach",
     ],
     images: [
       {
@@ -300,19 +303,20 @@ export const fallbackSingleWorks: SingleWorkData[] = [
   },
   {
     id: "work-healthcare-websites",
-    title: "Healthcare & Clinic Websites",
+    title: "Siam Smile Clinic & Hatyai International Dental Center",
     description:
-      "WordPress healthcare websites for Siam Smile Clinic and Hatyai International Dental Center, including multilingual service structures, technical SEO, patient landing pages, performance optimization, security, and maintenance.",
+      "Comprehensive WordPress websites for healthcare clients featuring multilingual support, technical SEO, patient conversion optimization, and performance-first architecture.",
     workUrl: "",
-    githubUrl: "https://github.com/MohammedMohsin404/AI-Resume-Analyzer",
-    clientName: "Healthcare clients",
+    githubUrl: "",
+    clientName: "Healthcare Clients (Thailand)",
     ownerName: personalInfo.fullName,
-    techStack: ["WordPress", "Elementor", "Cloudflare", "SEO", "Multilingual Content"],
+    techStack: ["WordPress", "Elementor", "Cloudflare", "Multilingual WPML", "SEO"],
     userActions: [
-      "Healthcare content and service-page structure",
-      "Technical SEO and Google indexing",
-      "Caching, CDN, and image optimization",
-      "Security, backups, and ongoing maintenance",
+      "Designed multilingual healthcare website structure for Thai and English audiences",
+      "Optimized for Google indexing with technical SEO and structured data",
+      "Implemented caching, CDN, and image optimization for 90+ PageSpeed scores",
+      "Configured SSL, automated backups, and security monitoring",
+      "Delivered responsive designs for patient-focused booking flows",
     ],
     images: [
       {
@@ -322,27 +326,52 @@ export const fallbackSingleWorks: SingleWorkData[] = [
     date: new Date("2020-01-01"),
   },
   {
-    id: "work-global-digital-platforms",
-    title: "Global Digital Platforms",
+    id: "work-ecommerce-platforms",
+    title: "WooCommerce & Shopify E-commerce Solutions",
     description:
-      "Freelance WordPress, WooCommerce, Shopify, LMS, SaaS, corporate, and e-commerce projects delivered for clients in healthcare, education, real estate, recruitment, and technology.",
+      "End-to-end e-commerce development for healthcare, education, and retail clients including payment integration, inventory management, and conversion-optimized checkout.",
     workUrl: "",
     githubUrl: "",
-    clientName: "Freelance / Remote",
+    clientName: "E-commerce Clients (Global)",
     ownerName: personalInfo.fullName,
-    techStack: ["WordPress", "WooCommerce", "Shopify", "LMS", "SEO", "Web Performance"],
+    techStack: ["WooCommerce", "Shopify", "Stripe", "PayPal", "MySQL"],
     userActions: [
-      "E-commerce catalog, payment, shipping, and checkout delivery",
-      "Learning platforms with courses, registrations, and student areas",
-      "Hosting, domains, SSL, CDN, and security management",
-      "SEO strategy, content optimization, and reporting",
+      "Built WooCommerce stores with product catalog, payment, shipping, and tax",
+      "Developed Shopify stores with custom themes and app integrations",
+      "Integrated Stripe, PayPal, and payment gateway configurations",
+      "Implemented inventory management and order tracking systems",
+      "Created customer account portals and order history features",
     ],
     images: [
       {
         url: "/images/avocado.jpg",
       },
     ],
-    date: new Date("2017-01-01"),
+    date: new Date("2019-01-01"),
+  },
+  {
+    id: "work-learning-platforms",
+    title: "LMS & SaaS Learning Platforms",
+    description:
+      "Custom Learning Management Systems and SaaS platforms with course management, student tracking, and certification systems for education clients.",
+    workUrl: "",
+    githubUrl: "",
+    clientName: "Education Clients (Asia, Middle East)",
+    ownerName: personalInfo.fullName,
+    techStack: ["WordPress", "LMS Plugins", "PHP", "MySQL"],
+    userActions: [
+      "Developed custom LMS with course creation, registration, and student areas",
+      "Implemented certification and quiz systems for completed courses",
+      "Built user role management and dashboard reporting",
+      "Configured email notifications and enrollment workflows",
+      "Delivered responsive design for mobile and desktop learning",
+    ],
+    images: [
+      {
+        url: "/images/pic4.png",
+      },
+    ],
+    date: new Date("2018-01-01"),
   },
 ]
 
@@ -365,26 +394,38 @@ export const fallbackWorksConnection: WorksConnectionData = {
     {
       node: {
         id: "work-healthcare-websites",
-        title: "Healthcare & Clinic Websites",
+        title: "Siam Smile Clinic & Hatyai International Dental Center",
         images: fallbackSingleWorks[1].images,
         workTabs: [
           { tab: "All" },
           { tab: "Healthcare" },
           { tab: "WordPress" },
           { tab: "SEO" },
+          { tab: "Performance" },
         ],
       },
     },
     {
       node: {
-        id: "work-global-digital-platforms",
-        title: "Global Digital Platforms",
+        id: "work-ecommerce-platforms",
+        title: "WooCommerce & Shopify E-commerce Solutions",
         images: fallbackSingleWorks[2].images,
         workTabs: [
           { tab: "All" },
           { tab: "WordPress" },
           { tab: "E-commerce" },
           { tab: "SEO" },
+        ],
+      },
+    },
+    {
+      node: {
+        id: "work-learning-platforms",
+        title: "LMS & SaaS Learning Platforms",
+        images: fallbackSingleWorks[3].images,
+        workTabs: [
+          { tab: "All" },
+          { tab: "WordPress" },
           { tab: "Performance" },
         ],
       },
